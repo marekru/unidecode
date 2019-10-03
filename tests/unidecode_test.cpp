@@ -6,8 +6,8 @@
 #include <boost/test/unit_test.hpp>
 #include <iostream>
 
-#include "unidecode.hpp"
-#include "utf8_string_iterator.hpp"
+#include "unidecode/unidecode.hpp"
+#include "unidecode/utf8_string_iterator.hpp"
 
 
 BOOST_AUTO_TEST_SUITE(unidecode_test)

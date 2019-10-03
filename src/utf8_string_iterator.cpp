@@ -2,7 +2,7 @@
 // Created by Marek on 1.10.2019.
 //
 
-#include "utf8_string_iterator.hpp"
+#include "unidecode/utf8_string_iterator.hpp"
 
 namespace unidecode {
 
