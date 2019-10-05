@@ -8,6 +8,8 @@
 
 #include "unidecode/unidecode.hpp"
 #include "unidecode/utf8_string_iterator.hpp"
+#include "unidecode/sections.hpp"
+#include "test_sections.hpp"
 
 
 BOOST_AUTO_TEST_SUITE(unidecode_test)
@@ -125,4 +127,27 @@ BOOST_AUTO_TEST_CASE(iterator_test) {
 }
 
 
+
+BOOST_AUTO_TEST_CASE(table_test) {
+
+    // section 0 are basic characters
+    for (int i = 1;i < 256;i++ ) {
+        auto theirs = unidecode::kUnidecodeData[i];
+        auto my = unidecode::kUnidecodeData_my[i];
+        if ( my == nullptr || theirs == nullptr )
+        {
+            assert(my == theirs);
+        } else {
+            for (int j = 0;j < 256;j++) {
+                if (theirs[j] != my[j]) {
+                    std::cout << "section: " << i << ", position: " << j
+                    << ", '"<< theirs[j] << "' != '" << my[j] << "' " << std::endl;
+                }
+            }
+        }
+    }
+}
+
+
 BOOST_AUTO_TEST_SUITE_END()
+

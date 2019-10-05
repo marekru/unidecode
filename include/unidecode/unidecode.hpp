@@ -13,8 +13,6 @@ namespace unidecode {
 
     template<typename InputIterator, typename OutputIterator>
     void Unidecode(const InputIterator& in_begin, const InputIterator& in_end, OutputIterator out_it) {
-        // TODO: check input & output size !
-
         for (auto it = in_begin; it != in_end; ++it) {
             unicode_char codepoint = *it;
 
